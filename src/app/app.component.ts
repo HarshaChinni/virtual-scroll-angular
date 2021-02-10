@@ -10,7 +10,7 @@ export class AppComponent implements OnInit {
   title = 'mat-select-virtual-drop-down';
   states: string[];
   userForm: FormGroup;
-  zipCodeList: string[];
+  zipCodes = [];
 
   constructor() {
 
@@ -49,8 +49,6 @@ export class AppComponent implements OnInit {
   }
 
   private setMockZipCodes() {
-    for (let zip = 0; zip < 10000; zip++) {
-      this.zipCodeList.push(zip.toString().padStart(4, '0'));
-    }
+    this.zipCodes = [...Array(10000).keys()].map((val) => val.toString().padStart(4, '0'));
   }
 }

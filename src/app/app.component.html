@@ -39,7 +39,7 @@
       <mat-form-field appearance="fill">
         <mat-label>Zip Code</mat-label>
         <mat-select formControlName="zipCode">
-          <mat-option *ngFor="let zip of zipCodeList" [value]="zip">
+          <mat-option *ngFor="let zip of zipCodes" [value]="zip">
             {{ zip }}
           </mat-option>
         </mat-select>
