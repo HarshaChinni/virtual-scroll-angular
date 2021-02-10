@@ -1,0 +1,7 @@
+#user-registration {
+  border: 1px solid black;
+  display: grid;
+  justify-content: center;
+  margin: 10vw;
+  width: 40vw;
+}
