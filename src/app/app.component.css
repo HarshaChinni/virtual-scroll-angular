@@ -11,3 +11,7 @@ h3 {
   margin: 10px;
   width: 15vw;
 }
+
+.virtual-scroll {
+  height: 200px;
+}

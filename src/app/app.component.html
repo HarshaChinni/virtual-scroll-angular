@@ -39,9 +39,15 @@
       <mat-form-field appearance="fill">
         <mat-label>Zip Code</mat-label>
         <mat-select formControlName="zipCode">
-          <mat-option *ngFor="let zip of zipCodes" [value]="zip">
+          <!-- <mat-option *ngFor="let zip of zipCodes" [value]="zip">
             {{ zip }}
-          </mat-option>
+          </mat-option> -->
+          <cdk-virtual-scroll-viewport [itemSize]="5" class="virtual-scroll">
+            <!-- This will cause a problem in not setting the initial value to the form -->
+            <mat-option *cdkVirtualFor="let zip of zipCodes">
+              {{ zip }}
+            </mat-option>
+          </cdk-virtual-scroll-viewport>
         </mat-select>
       </mat-form-field>
     </div>
