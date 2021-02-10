@@ -8,6 +8,7 @@ import { FormGroup, FormControl } from '@angular/forms';
 })
 export class AppComponent implements OnInit {
   title = 'mat-select-virtual-drop-down';
+  initialZip: string;
   states: string[];
   userForm: FormGroup;
   zipCodes = [];
@@ -20,6 +21,8 @@ export class AppComponent implements OnInit {
     this.initUserForm();
     this.setStates();
     this.setMockZipCodes();
+    this.initialZip = this.userForm.get('address.zipCode').value;
+    // console.log('THe zip initial value is: ', this.userForm.get('address.zipCode').value);
   }
 
   private initUserForm() {

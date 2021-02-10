@@ -47,6 +47,10 @@
             <mat-option *cdkVirtualFor="let zip of zipCodes">
               {{ zip }}
             </mat-option>
+            <!-- Adding conditional option will help us display the initial value if there is any -->
+            <mat-option *ngIf="initialZip" [value]="initialZip">
+              {{ initialZip }}
+            </mat-option>
           </cdk-virtual-scroll-viewport>
         </mat-select>
       </mat-form-field>
