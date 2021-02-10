@@ -1,19 +1,49 @@
 <section id="user-registration">
   <h3>User Registration</h3>
-  <form formGroupName="userForm">
-    <mat-form-field
-      formControlName="firstName"
-      appearance="outline"
-      floatLabel="First Name"
-    >
-      <!-- <mat-label>
-        First Name
-      </mat-label> -->
-      <input matInput placeholder="Enter first name..." />
+  <form [formGroup]="userForm">
+    <mat-form-field appearance="fill">
+      <mat-label>First Name</mat-label>
+      <input formControlName="firstName" matInput />
     </mat-form-field>
-    <mat-form-field appearance="outline">
-      <mat-label>Outline form field</mat-label>
-      <input matInput placeholder="Placeholder" />
+    <mat-form-field appearance="fill">
+      <mat-label>Last Name</mat-label>
+      <input formControlName="lastName" matInput />
     </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Company Name</mat-label>
+      <input formControlName="companyName" matInput />
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Current Role</mat-label>
+      <input formControlName="currentRole" matInput />
+    </mat-form-field>
+
+    <div formGroupName="address">
+      <h3>Address</h3>
+      <mat-form-field appearance="fill">
+        <mat-label>City</mat-label>
+        <input formControlName="city" matInput />
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Country</mat-label>
+        <input formControlName="country" matInput />
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>State</mat-label>
+        <mat-select formControlName="state">
+          <mat-option *ngFor="let state of states" [value]="state">
+            {{ state }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Zip Code</mat-label>
+        <mat-select formControlName="zipCode">
+          <mat-option *ngFor="let zip of zipCodeList" [value]="zip">
+            {{ zip }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
   </form>
 </section>
