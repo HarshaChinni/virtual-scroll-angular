@@ -5,3 +5,9 @@
   margin: 10vw;
   width: 40vw;
 }
+
+mat-form-field,
+h3 {
+  margin: 10px;
+  width: 15vw;
+}
